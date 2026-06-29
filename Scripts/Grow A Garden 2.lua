@@ -1,9 +1,9 @@
 --[[
-    ╔══════════════════════════════════════════════════════════════╗
-    ║              Speed Hub X - Grow A Garden 2                   ║
-    ║         Script ditulis ulang & di-deobfuscate secara manual  ║
-    ║         Berdasarkan analisis Luraph v14.7 protected script   ║
-    ╚══════════════════════════════════════════════════════════════╝
+    ===============================================================╗
+    |              Speed Hub X - Grow A Garden 2                   |
+    |         Script ditulis ulang & di-deobfuscate secara manual  |
+    |         Berdasarkan analisis Luraph v14.7 protected script   |
+    ================================================================
 
     FITUR:
     ✅ Auto Sell Fruit      - Jual buah otomatis
@@ -398,7 +398,7 @@ end
 -- MAIN LOOP FUNCTIONS
 -- ============================================================
 
--- ── AUTO SELL FRUIT ──────────────────────────────────────────
+-- -- AUTO SELL FRUIT ------------------------------------------
 local function AutoSellFruit()
     if not Settings["Auto Sell Fruit"] then return end
 
@@ -444,7 +444,7 @@ local function AutoSellFruit()
     task.wait(0.5)
 end
 
--- ── AUTO SELL ALL ─────────────────────────────────────────────
+-- -- AUTO SELL ALL ---------------------------------------------
 local function AutoSellAll()
     if not Settings["Auto Sell All"] then return end
 
@@ -485,7 +485,7 @@ local function AutoSellAll()
     task.wait(tonumber(Settings["Delay To Sell Inventory"]) or 0.05)
 end
 
--- ── AUTO COLLECT FRUIT ────────────────────────────────────────
+-- -- AUTO COLLECT FRUIT ----------------------------------------
 local function AutoCollectFruit()
     if not Settings["Auto Collect Fruit"] then return end
 
@@ -573,7 +573,7 @@ local function AutoCollectFruit()
     task.wait(0.5)
 end
 
--- ── AUTO SELL PETS ────────────────────────────────────────────
+-- -- AUTO SELL PETS --------------------------------------------
 local function AutoSellPets()
     if not Settings["Auto Sell Pets"] then return end
 
@@ -600,7 +600,7 @@ local function AutoSellPets()
     task.wait(0.5)
 end
 
--- ── ESP SPAWNED PETS ──────────────────────────────────────────
+-- -- ESP SPAWNED PETS ------------------------------------------
 local function UpdatePetESP()
     if not Settings["ESP Spawned Pets"] then return end
 
@@ -691,7 +691,7 @@ local function UpdatePetESP()
     task.wait(2)
 end
 
--- ── BACKPACK INFO / ESP FRUIT VALUE ──────────────────────────
+-- -- BACKPACK INFO / ESP FRUIT VALUE --------------------------
 local function UpdateBackpackInfo()
     if not Settings["ESP Fruit Value"] then return end
 
@@ -722,7 +722,7 @@ local function UpdateBackpackInfo()
     task.wait(1.5)
 end
 
--- ── ESP BACKPACK BUTTONS (Fruit Value per Item) ───────────────
+-- -- ESP BACKPACK BUTTONS (Fruit Value per Item) ---------------
 local function UpdateFruitValueESP()
     if not Settings["ESP Fruit Value"] then return end
 
@@ -793,32 +793,23 @@ print("[GAG2 Hub] Gunakan Settings table untuk mengaktifkan fitur!")
 task.spawn(MainLoop)
 
 -- ============================================================
--- PUBLIC API (untuk digunakan dengan GUI)
--- ============================================================
-
-return {
-    Settings        = Settings,
-    FruitFilter     = FruitFilter,
-    PetFilter       = PetFilter,
-    ESP             = ESP,
-    Networker       = Networker,
-    Converter       = Converter,
-    TeleportManager = TeleportManager,
-    Inventory       = Inventory,
-    Collection      = Collection,
-}
-
-
--- ============================================================
--- UI INTEGRATION (dipanggil oleh Loader.lua)
+-- PUBLIC API (untuk digunakan dengan GUI/Loader)
 -- ============================================================
 
 local GameModule = {}
-GameModule.Settings = Settings
+GameModule.Settings        = Settings
+GameModule.FruitFilter     = FruitFilter
+GameModule.PetFilter       = PetFilter
+GameModule.ESP             = ESP
+GameModule.Networker       = Networker
+GameModule.Converter       = Converter
+GameModule.TeleportManager = TeleportManager
+GameModule.Inventory       = Inventory
+GameModule.Collection      = Collection
 
 function GameModule.InitUI(Window)
 
-    -- ── TAB 1: AUTO FARM ─────────────────────────────────────
+    -- -- TAB 1: AUTO FARM -------------------------------------
     local FarmTab = Window:AddTab("Auto Farm", "🌱")
 
     FarmTab:AddSection("BUAH")
@@ -872,7 +863,7 @@ function GameModule.InitUI(Window)
         Settings["Weight Threshold"] = val
     end)
 
-    -- ── TAB 2: AUTO SELL ─────────────────────────────────────
+    -- -- TAB 2: AUTO SELL -------------------------------------
     local SellTab = Window:AddTab("Auto Sell", "💰")
 
     SellTab:AddSection("JUAL BUAH")
@@ -920,7 +911,7 @@ function GameModule.InitUI(Window)
         end
     end)
 
-    -- ── TAB 3: AUTO PET ──────────────────────────────────────
+    -- -- TAB 3: AUTO PET --------------------------------------
     local PetTab = Window:AddTab("Pets", "🐾")
 
     PetTab:AddSection("AUTO SELL PET")
@@ -946,7 +937,7 @@ function GameModule.InitUI(Window)
         end
     end)
 
-    -- ── TAB 4: ESP ───────────────────────────────────────────
+    -- -- TAB 4: ESP -------------------------------------------
     local EspTab = Window:AddTab("ESP", "👁️")
 
     EspTab:AddSection("VISUAL")
