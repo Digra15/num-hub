@@ -1,14 +1,14 @@
 --[[
-    â•”â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•—
-    â•‘                  NUM HUB - UI Library                    â•‘
-    â•‘              Beautiful Dark Purple/Blue Theme            â•‘
-    â•‘                    Version: 1.0.0                        â•‘
-    â•šâ•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+    Æ’Ã‚Â¢Ã¢â€šÂ¬Ã‚Â¢Ã¢â€šÂ¬Ã‚ÂÆ’Ã‚Â¢Ã¢â€šÂ¬Ã‚Â¢â€šÃ‚ÂÆ’Ã‚Â¢Ã¢â€šÂ¬Ã‚Â¢â€šÃ‚ÂÆ’Ã‚Â¢Ã¢â€šÂ¬Ã‚Â¢â€šÃ‚ÂÆ’Ã‚Â¢Ã¢â€šÂ¬Ã‚Â¢â€šÃ‚ÂÆ’Ã‚Â¢Ã¢â€šÂ¬Ã‚Â¢â€šÃ‚ÂÆ’Ã‚Â¢Ã¢â€šÂ¬Ã‚Â¢â€šÃ‚ÂÆ’Ã‚Â¢Ã¢â€šÂ¬Ã‚Â¢â€šÃ‚ÂÆ’Ã‚Â¢Ã¢â€šÂ¬Ã‚Â¢â€šÃ‚ÂÆ’Ã‚Â¢Ã¢â€šÂ¬Ã‚Â¢â€šÃ‚ÂÆ’Ã‚Â¢Ã¢â€šÂ¬Ã‚Â¢â€šÃ‚ÂÆ’Ã‚Â¢Ã¢â€šÂ¬Ã‚Â¢â€šÃ‚ÂÆ’Ã‚Â¢Ã¢â€šÂ¬Ã‚Â¢â€šÃ‚ÂÆ’Ã‚Â¢Ã¢â€šÂ¬Ã‚Â¢â€šÃ‚ÂÆ’Ã‚Â¢Ã¢â€šÂ¬Ã‚Â¢â€šÃ‚ÂÆ’Ã‚Â¢Ã¢â€šÂ¬Ã‚Â¢â€šÃ‚ÂÆ’Ã‚Â¢Ã¢â€šÂ¬Ã‚Â¢â€šÃ‚ÂÆ’Ã‚Â¢Ã¢â€šÂ¬Ã‚Â¢â€šÃ‚ÂÆ’Ã‚Â¢Ã¢â€šÂ¬Ã‚Â¢â€šÃ‚ÂÆ’Ã‚Â¢Ã¢â€šÂ¬Ã‚Â¢â€šÃ‚ÂÆ’Ã‚Â¢Ã¢â€šÂ¬Ã‚Â¢â€šÃ‚ÂÆ’Ã‚Â¢Ã¢â€šÂ¬Ã‚Â¢â€šÃ‚ÂÆ’Ã‚Â¢Ã¢â€šÂ¬Ã‚Â¢â€šÃ‚ÂÆ’Ã‚Â¢Ã¢â€šÂ¬Ã‚Â¢â€šÃ‚ÂÆ’Ã‚Â¢Ã¢â€šÂ¬Ã‚Â¢â€šÃ‚ÂÆ’Ã‚Â¢Ã¢â€šÂ¬Ã‚Â¢â€šÃ‚ÂÆ’Ã‚Â¢Ã¢â€šÂ¬Ã‚Â¢â€šÃ‚ÂÆ’Ã‚Â¢Ã¢â€šÂ¬Ã‚Â¢â€šÃ‚ÂÆ’Ã‚Â¢Ã¢â€šÂ¬Ã‚Â¢â€šÃ‚ÂÆ’Ã‚Â¢Ã¢â€šÂ¬Ã‚Â¢â€šÃ‚ÂÆ’Ã‚Â¢Ã¢â€šÂ¬Ã‚Â¢â€šÃ‚ÂÆ’Ã‚Â¢Ã¢â€šÂ¬Ã‚Â¢â€šÃ‚ÂÆ’Ã‚Â¢Ã¢â€šÂ¬Ã‚Â¢â€šÃ‚ÂÆ’Ã‚Â¢Ã¢â€šÂ¬Ã‚Â¢â€šÃ‚ÂÆ’Ã‚Â¢Ã¢â€šÂ¬Ã‚Â¢â€šÃ‚ÂÆ’Ã‚Â¢Ã¢â€šÂ¬Ã‚Â¢â€šÃ‚ÂÆ’Ã‚Â¢Ã¢â€šÂ¬Ã‚Â¢â€šÃ‚ÂÆ’Ã‚Â¢Ã¢â€šÂ¬Ã‚Â¢â€šÃ‚ÂÆ’Ã‚Â¢Ã¢â€šÂ¬Ã‚Â¢â€šÃ‚ÂÆ’Ã‚Â¢Ã¢â€šÂ¬Ã‚Â¢â€šÃ‚ÂÆ’Ã‚Â¢Ã¢â€šÂ¬Ã‚Â¢â€šÃ‚ÂÆ’Ã‚Â¢Ã¢â€šÂ¬Ã‚Â¢â€šÃ‚ÂÆ’Ã‚Â¢Ã¢â€šÂ¬Ã‚Â¢â€šÃ‚ÂÆ’Ã‚Â¢Ã¢â€šÂ¬Ã‚Â¢â€šÃ‚ÂÆ’Ã‚Â¢Ã¢â€šÂ¬Ã‚Â¢â€šÃ‚ÂÆ’Ã‚Â¢Ã¢â€šÂ¬Ã‚Â¢â€šÃ‚ÂÆ’Ã‚Â¢Ã¢â€šÂ¬Ã‚Â¢â€šÃ‚ÂÆ’Ã‚Â¢Ã¢â€šÂ¬Ã‚Â¢â€šÃ‚ÂÆ’Ã‚Â¢Ã¢â€šÂ¬Ã‚Â¢â€šÃ‚ÂÆ’Ã‚Â¢Ã¢â€šÂ¬Ã‚Â¢â€šÃ‚ÂÆ’Ã‚Â¢Ã¢â€šÂ¬Ã‚Â¢â€šÃ‚ÂÆ’Ã‚Â¢Ã¢â€šÂ¬Ã‚Â¢â€šÃ‚ÂÆ’Ã‚Â¢Ã¢â€šÂ¬Ã‚Â¢â€šÃ‚ÂÆ’Ã‚Â¢Ã¢â€šÂ¬Ã‚Â¢â€šÃ‚ÂÆ’Ã‚Â¢Ã¢â€šÂ¬Ã‚Â¢â€šÃ‚ÂÆ’Ã‚Â¢Ã¢â€šÂ¬Ã‚Â¢â€šÃ‚ÂÆ’Ã‚Â¢Ã¢â€šÂ¬Ã‚Â¢â€šÃ‚ÂÆ’Ã‚Â¢Ã¢â€šÂ¬Ã‚Â¢â€šÃ‚ÂÆ’Ã‚Â¢Ã¢â€šÂ¬Ã‚Â¢â€šÃ‚ÂÆ’Ã‚Â¢Ã¢â€šÂ¬Ã‚Â¢Ã¢â€šÂ¬Â
+    Æ’Ã‚Â¢Ã¢â€šÂ¬Ã‚Â¢Ã¢â€šÂ¬Ã‹Å“                  NUM HUB - UI Library                    Æ’Ã‚Â¢Ã¢â€šÂ¬Ã‚Â¢Ã¢â€šÂ¬Ã‹Å“
+    Æ’Ã‚Â¢Ã¢â€šÂ¬Ã‚Â¢Ã¢â€šÂ¬Ã‹Å“              Beautiful Dark Purple/Blue Theme            Æ’Ã‚Â¢Ã¢â€šÂ¬Ã‚Â¢Ã¢â€šÂ¬Ã‹Å“
+    Æ’Ã‚Â¢Ã¢â€šÂ¬Ã‚Â¢Ã¢â€šÂ¬Ã‹Å“                    Version: 1.0.0                        Æ’Ã‚Â¢Ã¢â€šÂ¬Ã‚Â¢Ã¢â€šÂ¬Ã‹Å“
+    Æ’Ã‚Â¢Ã¢â€šÂ¬Ã‚Â¢â€¦Ã‚Â¡Æ’Ã‚Â¢Ã¢â€šÂ¬Ã‚Â¢â€šÃ‚ÂÆ’Ã‚Â¢Ã¢â€šÂ¬Ã‚Â¢â€šÃ‚ÂÆ’Ã‚Â¢Ã¢â€šÂ¬Ã‚Â¢â€šÃ‚ÂÆ’Ã‚Â¢Ã¢â€šÂ¬Ã‚Â¢â€šÃ‚ÂÆ’Ã‚Â¢Ã¢â€šÂ¬Ã‚Â¢â€šÃ‚ÂÆ’Ã‚Â¢Ã¢â€šÂ¬Ã‚Â¢â€šÃ‚ÂÆ’Ã‚Â¢Ã¢â€šÂ¬Ã‚Â¢â€šÃ‚ÂÆ’Ã‚Â¢Ã¢â€šÂ¬Ã‚Â¢â€šÃ‚ÂÆ’Ã‚Â¢Ã¢â€šÂ¬Ã‚Â¢â€šÃ‚ÂÆ’Ã‚Â¢Ã¢â€šÂ¬Ã‚Â¢â€šÃ‚ÂÆ’Ã‚Â¢Ã¢â€šÂ¬Ã‚Â¢â€šÃ‚ÂÆ’Ã‚Â¢Ã¢â€šÂ¬Ã‚Â¢â€šÃ‚ÂÆ’Ã‚Â¢Ã¢â€šÂ¬Ã‚Â¢â€šÃ‚ÂÆ’Ã‚Â¢Ã¢â€šÂ¬Ã‚Â¢â€šÃ‚ÂÆ’Ã‚Â¢Ã¢â€šÂ¬Ã‚Â¢â€šÃ‚ÂÆ’Ã‚Â¢Ã¢â€šÂ¬Ã‚Â¢â€šÃ‚ÂÆ’Ã‚Â¢Ã¢â€šÂ¬Ã‚Â¢â€šÃ‚ÂÆ’Ã‚Â¢Ã¢â€šÂ¬Ã‚Â¢â€šÃ‚ÂÆ’Ã‚Â¢Ã¢â€šÂ¬Ã‚Â¢â€šÃ‚ÂÆ’Ã‚Â¢Ã¢â€šÂ¬Ã‚Â¢â€šÃ‚ÂÆ’Ã‚Â¢Ã¢â€šÂ¬Ã‚Â¢â€šÃ‚ÂÆ’Ã‚Â¢Ã¢â€šÂ¬Ã‚Â¢â€šÃ‚ÂÆ’Ã‚Â¢Ã¢â€šÂ¬Ã‚Â¢â€šÃ‚ÂÆ’Ã‚Â¢Ã¢â€šÂ¬Ã‚Â¢â€šÃ‚ÂÆ’Ã‚Â¢Ã¢â€šÂ¬Ã‚Â¢â€šÃ‚ÂÆ’Ã‚Â¢Ã¢â€šÂ¬Ã‚Â¢â€šÃ‚ÂÆ’Ã‚Â¢Ã¢â€šÂ¬Ã‚Â¢â€šÃ‚ÂÆ’Ã‚Â¢Ã¢â€šÂ¬Ã‚Â¢â€šÃ‚ÂÆ’Ã‚Â¢Ã¢â€šÂ¬Ã‚Â¢â€šÃ‚ÂÆ’Ã‚Â¢Ã¢â€šÂ¬Ã‚Â¢â€šÃ‚ÂÆ’Ã‚Â¢Ã¢â€šÂ¬Ã‚Â¢â€šÃ‚ÂÆ’Ã‚Â¢Ã¢â€šÂ¬Ã‚Â¢â€šÃ‚ÂÆ’Ã‚Â¢Ã¢â€šÂ¬Ã‚Â¢â€šÃ‚ÂÆ’Ã‚Â¢Ã¢â€šÂ¬Ã‚Â¢â€šÃ‚ÂÆ’Ã‚Â¢Ã¢â€šÂ¬Ã‚Â¢â€šÃ‚ÂÆ’Ã‚Â¢Ã¢â€šÂ¬Ã‚Â¢â€šÃ‚ÂÆ’Ã‚Â¢Ã¢â€šÂ¬Ã‚Â¢â€šÃ‚ÂÆ’Ã‚Â¢Ã¢â€šÂ¬Ã‚Â¢â€šÃ‚ÂÆ’Ã‚Â¢Ã¢â€šÂ¬Ã‚Â¢â€šÃ‚ÂÆ’Ã‚Â¢Ã¢â€šÂ¬Ã‚Â¢â€šÃ‚ÂÆ’Ã‚Â¢Ã¢â€šÂ¬Ã‚Â¢â€šÃ‚ÂÆ’Ã‚Â¢Ã¢â€šÂ¬Ã‚Â¢â€šÃ‚ÂÆ’Ã‚Â¢Ã¢â€šÂ¬Ã‚Â¢â€šÃ‚ÂÆ’Ã‚Â¢Ã¢â€šÂ¬Ã‚Â¢â€šÃ‚ÂÆ’Ã‚Â¢Ã¢â€šÂ¬Ã‚Â¢â€šÃ‚ÂÆ’Ã‚Â¢Ã¢â€šÂ¬Ã‚Â¢â€šÃ‚ÂÆ’Ã‚Â¢Ã¢â€šÂ¬Ã‚Â¢â€šÃ‚ÂÆ’Ã‚Â¢Ã¢â€šÂ¬Ã‚Â¢â€šÃ‚ÂÆ’Ã‚Â¢Ã¢â€šÂ¬Ã‚Â¢â€šÃ‚ÂÆ’Ã‚Â¢Ã¢â€šÂ¬Ã‚Â¢â€šÃ‚ÂÆ’Ã‚Â¢Ã¢â€šÂ¬Ã‚Â¢â€šÃ‚ÂÆ’Ã‚Â¢Ã¢â€šÂ¬Ã‚Â¢â€šÃ‚ÂÆ’Ã‚Â¢Ã¢â€šÂ¬Ã‚Â¢â€šÃ‚ÂÆ’Ã‚Â¢Ã¢â€šÂ¬Ã‚Â¢â€šÃ‚ÂÆ’Ã‚Â¢Ã¢â€šÂ¬Ã‚Â¢â€šÃ‚ÂÆ’Ã‚Â¢Ã¢â€šÂ¬Ã‚Â¢â€šÃ‚ÂÆ’Ã‚Â¢Ã¢â€šÂ¬Ã‚Â¢â€šÃ‚ÂÆ’Ã‚Â¢Ã¢â€šÂ¬Ã‚Â¢â€šÃ‚ÂÆ’Ã‚Â¢Ã¢â€šÂ¬Ã‚Â¢â€šÃ‚Â
 
     USAGE:
         local UI = loadstring(game:HttpGet("URL/UI/Library.lua"))()
         local Window = UI:CreateWindow("NUM HUB", "Grow A Garden 2")
-        local Tab = Window:AddTab("Auto Farm", "ðŸŒ±")
+        local Tab = Window:AddTab("Auto Farm", "Æ’Ã‚Â°â€¦Ã‚Â¸â€¦â„¢â€šÃ‚Â±")
         Tab:AddToggle("Auto Collect Fruit", false, function(state)
             Settings["Auto Collect Fruit"] = state
         end)
@@ -177,14 +177,14 @@ function Library:Notify(title, message, notifType, duration)
         error   = Theme.Danger,
     }
     local icons = {
-        info    = "â„¹ï¸",
-        success = "âœ…",
-        warning = "âš ï¸",
-        error   = "âŒ",
+        info    = "Æ’Ã‚Â¢Ã¢â€šÂ¬Ã…Â¾â€šÃ‚Â¹Æ’Ã‚Â¯â€šÃ‚Â¸â€šÃ‚Â",
+        success = "Æ’Ã‚Â¢â€¦Å“Ã¢â€šÂ¬Ã‚Â¦",
+        warning = "Æ’Ã‚Â¢â€¦Ã‚Â¡â€šÃ‚Â Æ’Ã‚Â¯â€šÃ‚Â¸â€šÃ‚Â",
+        error   = "Æ’Ã‚Â¢â€šÃ‚Ââ€¦â„¢",
     }
 
     local color = colors[notifType] or Theme.Info
-    local icon  = icons[notifType] or "â„¹ï¸"
+    local icon  = icons[notifType] or "Æ’Ã‚Â¢Ã¢â€šÂ¬Ã…Â¾â€šÃ‚Â¹Æ’Ã‚Â¯â€šÃ‚Â¸â€šÃ‚Â"
 
     -- Card
     local card = NewInstance("Frame", {
@@ -269,13 +269,18 @@ function Library:CreateWindow(hubName, gameName)
 
     CreateNotifContainer(ScreenGui)
 
-    -- â”€â”€ MAIN WINDOW â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+    -- -----------------------
+    -- Responsive Sizing for Mobile Screens
+    local ViewportSize = workspace.CurrentCamera.ViewportSize
+    local width = math.min(580, ViewportSize.X * 0.92)
+    local height = math.min(380, ViewportSize.Y * 0.88)
+
     local MainFrame = NewInstance("Frame", {
         Name             = "MainFrame",
         BackgroundColor3 = Theme.Background,
         BorderSizePixel  = 0,
-        Position         = UDim2.new(0.5, -300, 0.5, -200),
-        Size             = UDim2.new(0, 600, 0, 420),
+        Position         = UDim2.new(0.5, -width/2, 0.5, -height/2),
+        Size             = UDim2.new(0, width, 0, height),
         AnchorPoint      = Vector2.new(0, 0),
         Parent           = ScreenGui,
     })
@@ -296,7 +301,7 @@ function Library:CreateWindow(hubName, gameName)
         Parent   = MainFrame,
     })
 
-    -- â”€â”€ HEADER â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+    -- -----------------------
     local Header = NewInstance("Frame", {
         Name             = "Header",
         BackgroundColor3 = Theme.BackgroundAlt,
@@ -353,7 +358,7 @@ function Library:CreateWindow(hubName, gameName)
         BackgroundTransparency = 1,
         Position       = UDim2.new(0, 52, 0, 30),
         Size           = UDim2.new(0, 250, 0, 16),
-        Text           = "â–¸ " .. gameName,
+        Text           = "Æ’Ã‚Â¢Ã¢â€šÂ¬Å“â€šÃ‚Â¸ " .. gameName,
         TextColor3     = Theme.TextMuted,
         TextSize       = 11,
         Font           = Enum.Font.Gotham,
@@ -367,7 +372,7 @@ function Library:CreateWindow(hubName, gameName)
         BorderSizePixel  = 0,
         Position         = UDim2.new(1, -44, 0.5, -11),
         Size             = UDim2.new(0, 22, 0, 22),
-        Text             = "Ã—",
+        Text             = "Æ’Ã†â€™Ã¢â€šÂ¬Â",
         TextColor3       = Color3.new(1, 1, 1),
         TextSize         = 16,
         Font             = Enum.Font.GothamBold,
@@ -381,7 +386,7 @@ function Library:CreateWindow(hubName, gameName)
         BorderSizePixel  = 0,
         Position         = UDim2.new(1, -70, 0.5, -11),
         Size             = UDim2.new(0, 22, 0, 22),
-        Text             = "âˆ’",
+        Text             = "Æ’Ã‚Â¢â€¹Ã¢â€šÂ¬Ã¢â€žÂ¢",
         TextColor3       = Color3.new(1, 1, 1),
         TextSize         = 16,
         Font             = Enum.Font.GothamBold,
@@ -389,7 +394,7 @@ function Library:CreateWindow(hubName, gameName)
     })
     AddUICorner(MinBtn, 6)
 
-    -- â”€â”€ TAB BAR â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+    -- -----------------------
     local TabBar = NewInstance("Frame", {
         Name             = "TabBar",
         BackgroundColor3 = Theme.BackgroundAlt,
@@ -406,7 +411,7 @@ function Library:CreateWindow(hubName, gameName)
     })
     AddPadding(TabBar, 8, 8, 8, 8)
 
-    -- â”€â”€ CONTENT AREA â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+    -- -----------------------
     local ContentArea = NewInstance("Frame", {
         Name             = "ContentArea",
         BackgroundTransparency = 1,
@@ -424,10 +429,10 @@ function Library:CreateWindow(hubName, gameName)
         Parent           = MainFrame,
     })
 
-    -- â”€â”€ DRAG â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+    -- -----------------------
     MakeDraggable(MainFrame, Header)
 
-    -- â”€â”€ CLOSE & MINIMIZE â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+    -- -----------------------
     local isMinimized = false
     local originalSize = MainFrame.Size
 
@@ -437,13 +442,53 @@ function Library:CreateWindow(hubName, gameName)
         ScreenGui:Destroy()
     end)
 
+    -- Floating Minimize Icon
+    local MinIcon = NewInstance("TextButton", {
+        Name = "MinIcon",
+        BackgroundColor3 = Theme.Accent,
+        Position = UDim2.new(0.05, 0, 0.15, 0),
+        Size = UDim2.new(0, 45, 0, 45),
+        Text = "N",
+        TextColor3 = Color3.fromRGB(255, 255, 255),
+        TextSize = 22,
+        Font = Enum.Font.GothamBlack,
+        Visible = false,
+        Parent = ScreenGui,
+    })
+    AddUICorner(MinIcon, 22.5)
+    AddUIStroke(MinIcon, Theme.AccentGlow, 2)
+    
+    local MinShadow = NewInstance("ImageLabel", {
+        BackgroundTransparency = 1,
+        Position = UDim2.new(0, -10, 0, -10),
+        Size     = UDim2.new(1, 20, 1, 20),
+        Image    = "rbxassetid://6015897843",
+        ImageColor3 = Color3.fromRGB(0, 0, 0),
+        ImageTransparency = 0.4,
+        ScaleType = Enum.ScaleType.Slice,
+        SliceCenter = Rect.new(49, 49, 450, 450),
+        ZIndex   = 0,
+        Parent   = MinIcon,
+    })
+    MakeDraggable(MinIcon)
+
     MinBtn.MouseButton1Click:Connect(function()
-        isMinimized = not isMinimized
-        if isMinimized then
-            Tween(MainFrame, {Size = UDim2.new(0, 600, 0, 55)}, 0.3)
-        else
-            Tween(MainFrame, {Size = originalSize}, 0.3)
-        end
+        Tween(MainFrame, {Size = UDim2.new(0, width, 0, 0), BackgroundTransparency = 1}, 0.2)
+        task.delay(0.2, function()
+            MainFrame.Visible = false
+            MinIcon.Visible = true
+            MinIcon.Size = UDim2.new(0, 0, 0, 0)
+            Tween(MinIcon, {Size = UDim2.new(0, 45, 0, 45)}, 0.2)
+        end)
+    end)
+
+    MinIcon.MouseButton1Click:Connect(function()
+        Tween(MinIcon, {Size = UDim2.new(0, 0, 0, 0)}, 0.15)
+        task.delay(0.15, function()
+            MinIcon.Visible = false
+            MainFrame.Visible = true
+            Tween(MainFrame, {Size = originalSize, BackgroundTransparency = 0}, 0.25)
+        end)
     end)
 
     -- Hover effects
@@ -459,7 +504,7 @@ function Library:CreateWindow(hubName, gameName)
     MainFrame.BackgroundTransparency = 1
     Tween(MainFrame, {Size = originalSize, BackgroundTransparency = 0}, 0.4)
 
-    -- â”€â”€ WINDOW OBJECT â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+    -- -----------------------
     local Window = {}
     Window._tabs     = {}
     Window._tabBtns  = {}
@@ -471,9 +516,9 @@ function Library:CreateWindow(hubName, gameName)
         Library.Notify(self._lib, ...)
     end
 
-    -- â”€â”€ ADD TAB â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+    -- -----------------------
     function Window:AddTab(name, icon)
-        icon = icon or "â¬¡"
+        icon = icon or "Æ’Ã‚Â¢â€šÃ‚Â¬â€šÃ‚Â¡"
 
         -- Tab Button
         local TabBtn = NewInstance("TextButton", {
@@ -586,7 +631,7 @@ function Library:CreateWindow(hubName, gameName)
             ActivateTab()
         end
 
-        -- â”€â”€ SECTION â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+        -- -----------------------
         function Tab:AddSection(title)
             local SectionFrame = NewInstance("Frame", {
                 BackgroundTransparency = 1,
@@ -615,7 +660,7 @@ function Library:CreateWindow(hubName, gameName)
             })
         end
 
-        -- â”€â”€ TOGGLE â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+        -- -----------------------
         function Tab:AddToggle(name, default, callback)
             local state = default or false
 
@@ -709,7 +754,7 @@ function Library:CreateWindow(hubName, gameName)
             return ToggleObj
         end
 
-        -- â”€â”€ SLIDER â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+        -- -----------------------
         function Tab:AddSlider(name, min, max, default, callback)
             min     = min or 0
             max     = max or 1
@@ -820,7 +865,7 @@ function Library:CreateWindow(hubName, gameName)
             return SliderObj
         end
 
-        -- â”€â”€ DROPDOWN â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+        -- -----------------------
         function Tab:AddDropdown(name, options, default, callback)
             local selected = default or options[1] or "None"
             local isOpen   = false
@@ -869,7 +914,7 @@ function Library:CreateWindow(hubName, gameName)
                 BackgroundTransparency = 1,
                 Position  = UDim2.new(1, -28, 0, 0),
                 Size      = UDim2.new(0, 20, 1, 0),
-                Text      = "â–¾",
+                Text      = "Æ’Ã‚Â¢Ã¢â€šÂ¬Å“â€šÃ‚Â¾",
                 TextColor3 = Theme.TextMuted,
                 TextSize  = 14,
                 Font      = Enum.Font.GothamBold,
@@ -944,7 +989,7 @@ function Library:CreateWindow(hubName, gameName)
             return DropObj
         end
 
-        -- â”€â”€ BUTTON â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+        -- -----------------------
         function Tab:AddButton(name, description, callback)
             local Row = NewInstance("TextButton", {
                 BackgroundColor3 = Theme.Surface,
@@ -988,7 +1033,7 @@ function Library:CreateWindow(hubName, gameName)
                 BackgroundTransparency = 1,
                 Position  = UDim2.new(1, -30, 0, 0),
                 Size      = UDim2.new(0, 20, 1, 0),
-                Text      = "â€º",
+                Text      = "Æ’Ã‚Â¢-- Å¡Ã‚Â¬â€šÃ‚Âº",
                 TextColor3 = Theme.Accent,
                 TextSize  = 20,
                 Font      = Enum.Font.GothamBold,
@@ -1010,7 +1055,7 @@ function Library:CreateWindow(hubName, gameName)
             end)
         end
 
-        -- â”€â”€ LABEL / INFO â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+        -- -----------------------
         function Tab:AddLabel(text, labelType)
             labelType = labelType or "normal"
             local colors = {
@@ -1038,7 +1083,7 @@ function Library:CreateWindow(hubName, gameName)
             return LblObj
         end
 
-        -- â”€â”€ INPUT BOX â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+        -- -----------------------
         function Tab:AddInput(name, placeholder, callback)
             local Row = NewInstance("Frame", {
                 BackgroundColor3 = Theme.Surface,
