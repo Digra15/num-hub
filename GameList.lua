@@ -54,8 +54,7 @@ local Games = {
     -- CATATAN: Verifikasi Place ID Grow a Garden & Grow a Garden 2
     -- di browser: roblox.com/games/XXXXX/Grow-a-Garden ambil angkanya.
     [126884695634] = "https://raw.githubusercontent.com/Digra15/num-hub/main/Scripts/Grow%20a%20Garden.lua",   -- Grow a Garden
-    [97598239454123] = "https://raw.githubusercontent.com/Digra15/num-hub/main/Scripts/Grow%20a%20Garden%202.lua", -- Grow a Garden 2
-
+    [97598239454123] = "https://raw.githubusercontent.com/Digra15/num-hub/main/Scripts/Grow%20A%20Garden%202.lua", -- Grow A Garden 2
 }
 
 -- ============================================================
