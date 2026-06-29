@@ -98,17 +98,21 @@ local function IsInFilter(filterList, value)
 end
 
 -- ============================================================
+-- ============================================================
 -- NETWORKER (Remote Event Helper)
 -- ============================================================
 
 local Networker = {}
 
 function Networker.Fire(remoteName, ...)
-    -- Cari remote event di game
     local remoteFolder = game:GetService("ReplicatedStorage")
     local remote = remoteFolder:FindFirstChild(remoteName, true)
-    if remote and remote:IsA("RemoteEvent") then
-        remote:FireServer(...)
+    if remote then
+        if remote:IsA("RemoteEvent") then
+            remote:FireServer(...)
+        elseif remote:IsA("RemoteFunction") then
+            return remote:InvokeServer(...)
+        end
     end
 end
 
@@ -118,27 +122,22 @@ end
 
 local FruitFilter = {}
 
--- Filter buah berdasarkan setting
--- filterConfig = {selectFruits, selectRarity, selectMutation, {thresholdMode, weightThreshold, actualWeight}}
 function FruitFilter.Check(filterConfig, fruitObj, filterMode)
     local selectFruits    = filterConfig[1] or {}
     local selectRarity    = filterConfig[2] or {}
     local selectMutation  = filterConfig[3] or {}
     local thresholdConfig = filterConfig[4]
 
-    -- Cek nama buah
     local fruitName = fruitObj:GetAttribute("Name") or fruitObj.Name
     if not IsInFilter(selectFruits, fruitName) then
         return false
     end
 
-    -- Cek rarity
     local rarity = fruitObj:GetAttribute("Rarity")
     if not IsInFilter(selectRarity, rarity) then
         return false
     end
 
-    -- Cek mutasi
     local mutation = fruitObj:GetAttribute("Mutation")
     if selectMutation and #selectMutation > 0 then
         if not IsInFilter(selectMutation, mutation) then
@@ -146,7 +145,6 @@ function FruitFilter.Check(filterConfig, fruitObj, filterMode)
         end
     end
 
-    -- Cek threshold berat
     if thresholdConfig then
         local thresholdMode   = thresholdConfig[1]
         local weightThreshold = thresholdConfig[2]
@@ -173,52 +171,26 @@ function PetFilter.Check(filterConfig, petObj)
     local selectRarity  = filterConfig[2] or {}
     local selectSize    = filterConfig[3] or {}
 
-    -- Cek apakah pet sudah ditandai 'Petted'
     if not petObj:GetAttribute("Petted") then
         return false
     end
 
-    -- Jangan jual pet favorit
     if petObj:GetAttribute("IsFavorite") then
         return false
     end
 
-    -- Filter nama
     local petName = petObj:GetAttribute("PetName") or petObj.Name
     if not IsInFilter(selectPets, petName) then return false end
 
-    -- Filter rarity
     local rarity = petObj:GetAttribute("Rarity")
     if not IsInFilter(selectRarity, rarity) then return false end
 
-    -- Filter ukuran
     local size = petObj:GetAttribute("PetSize")
     if selectSize and #selectSize > 0 then
         if not IsInFilter(selectSize, size) then return false end
     end
 
     return true
-end
-
--- ============================================================
--- INVENTORY / BACKPACK UTILITIES
--- ============================================================
-
-local Inventory = {}
-
-function Inventory.IsMaxInventory()
-    local plot = workspace:FindFirstChild("Map")
-    if not plot then return false end
-    -- Cek kapasitas inventory (implementasi tergantung game internal)
-    local backpack = LocalPlayer:FindFirstChild("Backpack")
-    if not backpack then return false end
-    -- Return true jika inventory penuh
-    return false -- Placeholder; sesuaikan dengan game API
-end
-
-function Inventory.GetTotalFruitValue()
-    -- Placeholder untuk mendapatkan total nilai buah
-    return 0
 end
 
 -- ============================================================
@@ -233,7 +205,9 @@ function ToolManager.GetAllTool()
     local character = LocalPlayer.Character
     if backpack then
         for _, tool in ipairs(backpack:GetChildren()) do
-            table.insert(tools, tool)
+            if tool:IsA("Tool") then
+                table.insert(tools, tool)
+            end
         end
     end
     if character then
@@ -243,7 +217,44 @@ function ToolManager.GetAllTool()
             end
         end
     end
-    return ipairs(tools)
+    return tools
+end
+
+-- ============================================================
+-- INVENTORY / BACKPACK UTILITIES
+-- ============================================================
+
+local Inventory = {}
+
+function Inventory.IsMaxInventory()
+    local plot = Collection.GetOwnerPlot()
+    if plot then
+        local fruitCount  = plot:GetAttribute("FruitCount") or 0
+        local maxCapacity = plot:GetAttribute("MaxFruitCapacity") or 100
+        return fruitCount >= maxCapacity
+    end
+    return false
+end
+
+function Inventory.GetTotalFruitValue()
+    local total = 0
+    local sharedModules = game:GetService("ReplicatedStorage"):FindFirstChild("SharedModules")
+    local fruitValueCalcModule = sharedModules and sharedModules:FindFirstChild("FruitValueCalc")
+    local fruitValueCalc = fruitValueCalcModule and require(fruitValueCalcModule)
+    if not fruitValueCalc then return 0 end
+
+    for _, tool in ipairs(ToolManager.GetAllTool()) do
+        if tool:GetAttribute("HarvestedFruit") then
+            local fruitName = tool:GetAttribute("CorePartName") or tool:GetAttribute("SeedName") or tool.Name
+            local sizeMulti = tool:GetAttribute("SizeMulti") or 1
+            local mutation  = tool:GetAttribute("Mutation")
+            local ok, val = pcall(fruitValueCalc, fruitName, sizeMulti, mutation)
+            if ok and tonumber(val) then
+                total = total + val
+            end
+        end
+    end
+    return total
 end
 
 -- ============================================================
@@ -502,7 +513,8 @@ local function AutoCollectFruit()
     -- Dapatkan controller untuk perhitungan berat
     local playerScripts = LocalPlayer:FindFirstChild("PlayerScripts")
     local controllers   = playerScripts and playerScripts:FindFirstChild("Controllers")
-    local fruitVisualizer = controllers and controllers:FindFirstChild("FruitVisualizerController")
+    local fruitVisualizerModule = controllers and controllers:FindFirstChild("FruitVisualizerController")
+    local fruitVisualizer = fruitVisualizerModule and require(fruitVisualizerModule)
 
     for _, plantObj in ipairs(plantList) do
         if not Settings["Auto Collect Fruit"] then break end
@@ -747,50 +759,55 @@ local function UpdateFruitValueESP()
     task.wait(2)
 end
 
--- ============================================================
--- MAIN EXECUTOR LOOP
--- ============================================================
+-- -- MAIN EXECUTOR LOOPS ---------------------------------------
 
-local function MainLoop()
+task.spawn(function()
     while true do
-        -- Auto Sell Fruit (individual)
-        local ok1, err1 = pcall(AutoSellFruit)
-        if not ok1 then warn("[GAG2 Hub] AutoSellFruit error: " .. tostring(err1)) end
-
-        -- Auto Sell All
-        local ok2, err2 = pcall(AutoSellAll)
-        if not ok2 then warn("[GAG2 Hub] AutoSellAll error: " .. tostring(err2)) end
-
-        -- Auto Collect Fruit
-        local ok3, err3 = pcall(AutoCollectFruit)
-        if not ok3 then warn("[GAG2 Hub] AutoCollectFruit error: " .. tostring(err3)) end
-
-        -- Auto Sell Pets
-        local ok4, err4 = pcall(AutoSellPets)
-        if not ok4 then warn("[GAG2 Hub] AutoSellPets error: " .. tostring(err4)) end
-
-        -- ESP Update
-        local ok5, err5 = pcall(UpdatePetESP)
-        if not ok5 then warn("[GAG2 Hub] PetESP error: " .. tostring(err5)) end
-
-        local ok6, err6 = pcall(UpdateBackpackInfo)
-        if not ok6 then warn("[GAG2 Hub] BackpackInfo error: " .. tostring(err6)) end
-
-        task.wait(0.1)
+        local ok, err = pcall(AutoCollectFruit)
+        if not ok then warn("[GAG2 Hub] AutoCollect error: " .. tostring(err)) end
+        task.wait(0.2)
     end
-end
+end)
 
--- ============================================================
--- INITIALIZATION
--- ============================================================
+task.spawn(function()
+    while true do
+        local ok, err = pcall(AutoSellFruit)
+        if not ok then warn("[GAG2 Hub] AutoSell error: " .. tostring(err)) end
+        task.wait(0.2)
+    end
+end)
 
-print("[GAG2 Hub] Script loaded! Version: 1.0.0")
-print("[GAG2 Hub] Game: Grow A Garden 2")
-print("[GAG2 Hub] Fitur: Auto Sell, Auto Collect, Pet ESP, Fruit ESP")
-print("[GAG2 Hub] Gunakan Settings table untuk mengaktifkan fitur!")
+task.spawn(function()
+    while true do
+        local ok, err = pcall(AutoSellAll)
+        if not ok then warn("[GAG2 Hub] AutoSellAll error: " .. tostring(err)) end
+        task.wait(0.2)
+    end
+end)
 
--- Jalankan main loop dalam coroutine
-task.spawn(MainLoop)
+task.spawn(function()
+    while true do
+        local ok, err = pcall(AutoSellPets)
+        if not ok then warn("[GAG2 Hub] AutoSellPets error: " .. tostring(err)) end
+        task.wait(0.2)
+    end
+end)
+
+task.spawn(function()
+    while true do
+        local ok, err = pcall(UpdatePetESP)
+        if not ok then warn("[GAG2 Hub] PetESP error: " .. tostring(err)) end
+        task.wait(2)
+    end
+end)
+
+task.spawn(function()
+    while true do
+        local ok, err = pcall(UpdateBackpackInfo)
+        if not ok then warn("[GAG2 Hub] BackpackInfo error: " .. tostring(err)) end
+        task.wait(1)
+    end
+end)
 
 -- ============================================================
 -- PUBLIC API (untuk digunakan dengan GUI/Loader)
