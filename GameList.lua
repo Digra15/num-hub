@@ -1,18 +1,83 @@
+--[[
+    
+    Cara menambah game baru:
+    1. Buka game di browser: roblox.com/games/XXXXXXX/Game-Name
+    2. Ambil angka setelah /games/ itu adalah Place ID
+    3. Tambahkan: [PlaceID] = "URL script raw GitHub kamu"
+
+    GitHub Repository: https://github.com/Digra15/num-hub
+]]
+
+-- ============================================================
+--  GAME LIST - Daftar semua game yang didukung
+-- ============================================================
+
 local Games = {
-  [994732206] = "https://raw.githubusercontent.com/AhmadV99/Script-Games/main/Blox%20Fruit.lua", -- Blox Fruit
-  [1268927906] = "https://raw.githubusercontent.com/AhmadV99/Script-Games/main/Muscle%20Legends.lua", -- Muscle Legends
-  [3808081382] = "https://raw.githubusercontent.com/AhmadV99/Script-Games/main/The%20Strongest%20Battleground.lua",  -- The Strongest Battlegrounds
-  [6401952734] = "https://raw.githubusercontent.com/AhmadV99/Script-Games/main/Pet%20GO.lua", -- Pet GO
-  [5750914919] = "https://raw.githubusercontent.com/AhmadV99/Script-Games/main/Fisch.lua", -- Fisch
-  [7436755782] = "https://raw.githubusercontent.com/AhmadV99/Script-Games/refs/heads/main/Grow%20a%20Garden.lua", -- Grow a Garden
-  [7671049560] = "https://raw.githubusercontent.com/AhmadV99/Script-Games/refs/heads/main/The%20Forge.lua", -- The Forge
-  [9186719164] = "https://raw.githubusercontent.com/AhmadV99/Script-Games/refs/heads/main/Sailor%20Piece.lua", -- Sailor Piece
-  [9792947201] = "https://raw.githubusercontent.com/AhmadV99/Script-Games/refs/heads/main/Slime%20RNG.lua", -- Slime RNG
-  [9098570654] = "https://raw.githubusercontent.com/AhmadV99/Script-Games/refs/heads/main/Survive%20the%20Apocalypse.lua", -- Survive the Apocalypse
-  [10004244222] = "https://raw.githubusercontent.com/AhmadV99/Script-Games/refs/heads/main/Kick%20a%20Lucky%20Block.lua", -- Kick a Lucky Block
-	[10039338037] = "https://raw.githubusercontent.com/AhmadV99/Script-Games/refs/heads/main/Build%20A%20Ring%20Farm.lua", -- Build A Ring Farm
-  [9584852943] = "https://raw.githubusercontent.com/AhmadV99/Script-Games/refs/heads/main/%2B1%20Speed%20Keyboard%20Escape.lua", -- +1 Speed Keyboard Escape
-  [10200395747] = "https://raw.githubusercontent.com/Digra15/num-hub/refs/heads/main/Scripts/Grow%20A%20Garden%202.lua", -- Grow A Garden 2
+
+    -- ---------------------------------------------------------
+    --  FIGHTING / BATTLE
+    -- ---------------------------------------------------------
+
+    [994732206]  = "https://raw.githubusercontent.com/Digra15/num-hub/main/Scripts/Blox%20Fruits.lua",        -- Blox Fruits
+    [3808081382] = "https://raw.githubusercontent.com/Digra15/num-hub/main/Scripts/The%20Strongest%20Battlegrounds.lua", -- The Strongest Battlegrounds
+
+    -- ---------------------------------------------------------
+    --  PET / SIMULATOR
+    -- ---------------------------------------------------------
+
+    [8737899170] = "https://raw.githubusercontent.com/Digra15/num-hub/main/Scripts/Pet%20Simulator%2099.lua", -- Pet Simulator 99
+    [6401952734] = "https://raw.githubusercontent.com/Digra15/num-hub/main/Scripts/Pet%20GO.lua",             -- Pet GO
+
+    -- ---------------------------------------------------------
+    --  ANIME
+    -- ---------------------------------------------------------
+
+    [12688139157] = "https://raw.githubusercontent.com/Digra15/num-hub/main/Scripts/Anime%20Adventures.lua", -- Anime Adventures
+
+    -- ---------------------------------------------------------
+    --  HORROR / MURDER
+    -- ---------------------------------------------------------
+
+    [142823291]  = "https://raw.githubusercontent.com/Digra15/num-hub/main/Scripts/Murder%20Mystery%202.lua", -- Murder Mystery 2
+
+    -- ---------------------------------------------------------
+    --  ROLEPLAY / SOCIAL
+    -- ---------------------------------------------------------
+
+    [2788229376] = "https://raw.githubusercontent.com/Digra15/num-hub/main/Scripts/Da%20Hood.lua",           -- Da Hood
+    [4924922222] = "https://raw.githubusercontent.com/Digra15/num-hub/main/Scripts/Brookhaven.lua",          -- Brookhaven RP
+
+    -- ---------------------------------------------------------
+    --  FARMING / IDLE
+    -- ---------------------------------------------------------
+
+    -- CATATAN: Verifikasi Place ID Grow a Garden & Grow a Garden 2
+    -- di browser: roblox.com/games/XXXXX/Grow-a-Garden ambil angkanya.
+    [126884695634] = "https://raw.githubusercontent.com/Digra15/num-hub/main/Scripts/Grow%20a%20Garden.lua",   -- Grow a Garden
+    [97598239454123] = "https://raw.githubusercontent.com/Digra15/num-hub/main/Scripts/Grow%20a%20Garden%202.lua", -- Grow a Garden 2
+
 }
+
+-- ============================================================
+--  LOADER - Jangan ubah bagian ini
+-- ============================================================
+
+local PlaceId = game.PlaceId
+
+if Games[PlaceId] then
+    print("[Speed Hub X] Game ditemukan: " .. tostring(PlaceId))
+    print("[Speed Hub X] Memuat script...")
+
+    local success, err = pcall(function()
+        loadstring(game:HttpGet(Games[PlaceId]))()
+    end)
+
+    if not success then
+        warn("[Speed Hub X] Gagal memuat script: " .. tostring(err))
+    end
+else
+    warn("[Speed Hub X] Game dengan Place ID [" .. tostring(PlaceId) .. "] belum didukung.")
+    warn("[Speed Hub X] Kunjungi repo kami untuk request game baru!")
+end
 
 return Games
